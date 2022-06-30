@@ -1,3 +1,33 @@
 #+title: Plan
 
-*
+* Plan
+** Models
+*** User
+#+Name: user
+#+begin_src plantuml
+class User {
+        integer id
+        string name
+        string email
+}
+#+end_src
+*** Micropost
+#+Name: micropost
+#+begin_src plantuml
+class Micropost {
+        integer id
+        text content
+        integer user_id
+}
+#+end_src
+*** workflow
+#+begin_src plantuml :file diagram.png :noweb yes
+<<user>>
+
+<<micropost>>
+
+User -- Micropost : > owns
+#+end_src
+
+#+RESULTS:
+[[file:diagram.png]]
